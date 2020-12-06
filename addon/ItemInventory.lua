@@ -17,7 +17,7 @@ addon.itemLocations = _G['ItemLocations']
 addon.character_name = addon.utils:GetCharacterString()
 
 addon.Owners = _G['OwnersAddon']
-addon.characterInfo = _G['CharacterInfoClass']
+addon.characterInfo = _G['CharacterData']
 
 local mail = LibStub("LibMail-0.2")
 
@@ -216,8 +216,8 @@ function addon:itemCountTooltip(itemID)
                 table.insert(location_strings, line)
             end
 
-            ---@type CharacterInfoClass
-            local characterInfo = _G['CharacterInfoClass']:load(realm, name)
+            ---@type CharacterData
+            local characterInfo = _G['CharacterData']:load(realm, name)
             local color = characterInfo:color()
 
             local right_text = table.concat(location_strings, '||')
