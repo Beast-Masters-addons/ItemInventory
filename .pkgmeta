@@ -14,3 +14,5 @@ required-dependencies:
 
 ignore:
   - libs/BM-utils/tests
+
+enable-nolib-creation: yes
