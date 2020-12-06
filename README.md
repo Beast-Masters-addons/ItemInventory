@@ -5,8 +5,7 @@ The same functionality is provided by other addons like [BagBrother](https://git
 This addon does not require any other UI-mods.
 
 ### TODO:
-[ ]Save equipped items
 
-[ ]Save items from guild bank
-
-[ ]Save items from void storage
+- [ ] Save equipped items
+- [ ] Save items from guild bank
+- [ ] Save items from void storage
