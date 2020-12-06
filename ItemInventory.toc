@@ -6,10 +6,10 @@
 ## SavedVariables: ItemLocations, CharacterInfo
 ## Dependencies: LibItems, BM-utils
 
-@no-lib-strip@
+#@no-lib-strip@
 libs/BM-utils/addon/utils.lua
 libs/BM-utils/addon/Character.lua
-@end-no-lib-strip@
+#@end-no-lib-strip@
 
 addon/ItemInventory.lua
 addon/events.lua
