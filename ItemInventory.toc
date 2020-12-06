@@ -1,0 +1,15 @@
+## Interface: 11306
+## Title: ItemInventory
+## Author: datagutten
+## Version: 1.0
+## Notes: Get item inventory cross characters
+## SavedVariables: ItemLocations, CharacterInfo
+## Dependencies: LibItems, BM-utils
+
+@no-lib-strip@
+libs/BM-utils/addon/utils.lua
+libs/BM-utils/addon/Character.lua
+@end-no-lib-strip@
+
+addon/ItemInventory.lua
+addon/events.lua
