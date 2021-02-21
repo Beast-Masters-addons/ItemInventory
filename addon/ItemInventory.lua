@@ -221,7 +221,7 @@ function addon:itemCountTooltip(itemID)
             local color = characterInfo:color()
 
             local right_text = table.concat(location_strings, '||')
-            local icon = characterInfo:iconString(12, 0, 0)
+            local icon = self.utils:sprintf('|A:raceicon-%s-%s:12:12|a', characterInfo.raceFile, characterInfo:genderString())
 
             GameTooltip:AddDoubleLine(icon .. ' ' .. color:WrapTextInColorCode(characterInfo.name), right_text)
         end
