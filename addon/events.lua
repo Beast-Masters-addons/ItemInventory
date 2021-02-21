@@ -52,6 +52,13 @@ function events:PLAYERBANKSLOTS_CHANGED(slot)
     addon:scanBank()
 end
 
+function events:PLAYERREAGENTBANKSLOTS_CHANGED(slot)
+    --@debug@
+    addon.utils:sprintf('Reagent Bank slot %d changed', slot)
+    --@end-debug@
+    addon:scanBank()
+end
+
 function events:PLAYER_EQUIPMENT_CHANGED()
     --addon:scanEquipment()
 end

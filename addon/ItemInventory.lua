@@ -64,6 +64,9 @@ function frame:registerEvents()
         self:RegisterEvent('GUILDBANKFRAME_CLOSED')
         self:RegisterEvent('GUILDBANKBAGSLOTS_CHANGED')
     end
+    if _G['REAGENTBANK_CONTAINER'] ~= nil then
+        self:RegisterEvent('PLAYERREAGENTBANKSLOTS_CHANGED')
+    end
 end
 frame:SetScript("OnEvent", frame.OnEvent);
 frame:RegisterEvent("ADDON_LOADED"); -- Fired when saved variables are loaded
@@ -174,6 +177,10 @@ function addon:scanBank()
     self:clearItemLocation('Bank')
     self:saveContainerLocations(1 + NUM_BAG_SLOTS, NUM_BANKBAGSLOTS + NUM_BAG_SLOTS, 'Bank')
     self:saveContainerLocations(BANK_CONTAINER, BANK_CONTAINER, 'Bank')
+    if _G['REAGENTBANK_CONTAINER'] ~= nil then
+        self:clearItemLocation('Reagent Bank')
+        self:saveContainerLocations(_G['REAGENTBANK_CONTAINER'], _G['REAGENTBANK_CONTAINER'], 'Reagent Bank')
+    end
 end
 
 function addon:scanMail()
