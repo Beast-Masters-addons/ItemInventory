@@ -19,7 +19,7 @@ addon.character_name = addon.utils:GetCharacterString()
 addon.Owners = _G['OwnersAddon']
 addon.characterInfo = _G['CharacterData']
 
-local mail = LibStub("LibMail-0.2")
+local mail = _G['LibInventoryMail']
 
 local frame = CreateFrame("Frame"); -- Need a frame to respond to events
 -- Event handler

@@ -1,16 +1,16 @@
 package-as: ItemInventory
 
 externals:
-  libs/LibItems:
-    url: https://github.com/datagutten/wow-LibItems.git
-    tag: v0.3.1
+  libs/LibInventory:
+    url: https://github.com/Beast-Masters-addons/LibInventory.git
+    tag: v0.4
   libs/BM-utils:
     url: https://github.com/Beast-Masters-addons/BM-utils.git
     tag: v1.3
 
 required-dependencies:
   - BM-utils
-  - LibItems
+  - LibInventory
 
 ignore:
   - libs/BM-utils/tests
