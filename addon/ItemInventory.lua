@@ -96,7 +96,7 @@ function addon:clearItemLocation(location)
     for itemID, characters in pairs(_G['ItemLocations']) do
         for character, locations in pairs(characters) do
             for loc, _ in pairs(locations) do
-                if loc == location then
+                if loc == location and character==self.character_name then
                     _G['ItemLocations'][itemID][character][loc] = nil
                 end
             end
