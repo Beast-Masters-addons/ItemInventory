@@ -8,10 +8,10 @@ _G['ItemInventoryAddon'] = {}
 local addon = _G['ItemInventoryAddon']
 
 addon.utils = _G['BMUtils']
-addon.utils = LibStub("BM-utils-1.0")
+addon.utils = LibStub("BM-utils-1")
 
 addon.inventory = _G['LibInventory']
-addon.inventory = LibStub("LibInventory-0.1")
+addon.inventory = LibStub("LibInventory-0")
 
 addon.itemLocations = _G['ItemLocations']
 addon.character_name = addon.utils:GetCharacterString()

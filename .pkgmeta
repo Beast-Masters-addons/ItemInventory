@@ -3,7 +3,7 @@ package-as: ItemInventory
 externals:
   libs/LibItems:
     url: https://github.com/datagutten/wow-LibItems.git
-    tag: v0.3
+    tag: v0.3.1
   libs/BM-utils:
     url: https://github.com/Beast-Masters-addons/BM-utils.git
     tag: v1.3
