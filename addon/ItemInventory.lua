@@ -54,16 +54,17 @@ function frame:registerEvents()
     self:RegisterEvent('BANKFRAME_CLOSED')
     self:RegisterEvent('PLAYERBANKSLOTS_CHANGED')
 
-    if CanUseVoidStorage then
-        self:RegisterEvent('VOID_STORAGE_OPEN')
-        self:RegisterEvent('VOID_STORAGE_CLOSE')
-    end
+    --if CanUseVoidStorage then
+    --    self:RegisterEvent('VOID_STORAGE_OPEN')
+    --    self:RegisterEvent('VOID_STORAGE_CLOSE')
+    --end
 
-    if CanGuildBankRepair then
-        self:RegisterEvent('GUILDBANKFRAME_OPENED')
-        self:RegisterEvent('GUILDBANKFRAME_CLOSED')
-        self:RegisterEvent('GUILDBANKBAGSLOTS_CHANGED')
-    end
+    --if CanGuildBankRepair then
+    --    self:RegisterEvent('GUILDBANKFRAME_OPENED')
+    --    self:RegisterEvent('GUILDBANKFRAME_CLOSED')
+    --    self:RegisterEvent('GUILDBANKBAGSLOTS_CHANGED')
+    --end
+
     if _G['REAGENTBANK_CONTAINER'] ~= nil then
         self:RegisterEvent('PLAYERREAGENTBANKSLOTS_CHANGED')
     end
