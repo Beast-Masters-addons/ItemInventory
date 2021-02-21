@@ -8,7 +8,7 @@
 ## Author: datagutten
 ## Version: @project-version@
 ## Notes: Get item inventory cross characters
-## SavedVariables: ItemLocations, CharacterInfo
+## SavedVariables: ItemLocations, Characters
 ## OptionalDeps: LibItems, BM-utils
 
 #@no-lib-strip@
