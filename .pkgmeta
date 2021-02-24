@@ -3,7 +3,7 @@ package-as: ItemInventory
 externals:
   libs/LibInventory:
     url: https://github.com/Beast-Masters-addons/LibInventory.git
-    tag: v0.4
+    tag: v0.5
   libs/BM-utils:
     url: https://github.com/Beast-Masters-addons/BM-utils.git
     tag: v1.3

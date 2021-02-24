@@ -14,7 +14,8 @@
 #@no-lib-strip@
 libs\BM-utils\addon\utils.lua
 libs\BM-utils\addon\CharacterData.lua
-libs\LibInventory\LibInventory.lua
+libs\LibInventory\addon\LibInventory.lua
+libs\LibInventory\addon\mail.lua
 #@end-no-lib-strip@
 
 addon\ItemInventory.lua
