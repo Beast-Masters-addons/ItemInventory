@@ -226,15 +226,17 @@ function addon:itemCountTooltip(itemID)
 
             ---@type CharacterData
             local characterInfo = _G['CharacterData']:load(realm, name)
-            local color = characterInfo:color()
-
             local right_text = table.concat(location_strings, '||')
-            local icon = self.utils:sprintf('|A:raceicon-%s-%s:12:12|a',
-                    characterInfo.raceFile,
-                    characterInfo:genderString()
-            )
-
-            GameTooltip:AddDoubleLine(icon .. ' ' .. color:WrapTextInColorCode(characterInfo.name), right_text)
+            if characterInfo then
+                local color = characterInfo:color()
+                local icon = self.utils:sprintf('|A:raceicon-%s-%s:12:12|a',
+                        characterInfo.raceFile,
+                        characterInfo:genderString()
+                )
+                _G.GameTooltip:AddDoubleLine(icon .. ' ' .. color:WrapTextInColorCode(characterInfo.name), right_text)
+            else
+                _G.GameTooltip:AddDoubleLine(name, right_text)
+            end
         end
     end
 end
