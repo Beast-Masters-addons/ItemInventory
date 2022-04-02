@@ -1,9 +1,6 @@
-#@retail@
-## Interface: 90002
-#@end-retail@
-#@non-retail@
-# ## Interface: 11306
-#@end-non-retail@
+## Interface-Retail: 90200
+## Interface-Classic: 11402
+## Interface-BCC: 20504
 ## Title: ItemInventory
 ## Author: datagutten
 ## Version: @project-version@
