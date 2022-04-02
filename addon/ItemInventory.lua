@@ -15,9 +15,10 @@ assert(minor >= 6, ('BMUtils 1.6 or higher is required, found 1.%d'):format(mino
 addon.inventory = _G.LibStub('LibInventory-0')
 addon.characterInfo = _G['CharacterData']
 
-local frame = CreateFrame("Frame"); -- Need a frame to respond to events
+local frame = _G.CreateFrame("Frame"); -- Need a frame to respond to events
 -- Event handler
-function frame:OnEvent(event, arg1)
+
+frame:SetScript("OnEvent", function(_, event, arg1)
     if event == "ADDON_LOADED" and arg1 == "ItemInventory" then
         --@debug
         addon.utils:printf("%s loaded", addonName)
@@ -26,9 +27,7 @@ function frame:OnEvent(event, arg1)
         local character = addon.characterInfo:current()
         character:save()
     end
-end
-
-frame:SetScript("OnEvent", frame.OnEvent);
+end);
 frame:RegisterEvent("ADDON_LOADED"); -- Fired when saved variables are loaded
 
 addon.location_color = 'ffffffff'
@@ -66,9 +65,8 @@ function addon:itemCountTooltip(itemID)
     end
 end
 
-GameTooltip:HookScript("OnTooltipSetItem", function(self)
-    if not addonName == "ItemInventory" then
-        print('Tooltip from wrong addon', addonName)
+_G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
+    if addonName ~= "ItemInventory" then
         return
     end
     local _, link = self:GetItem()
