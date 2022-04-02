@@ -8,14 +8,12 @@
 ## Author: datagutten
 ## Version: @project-version@
 ## Notes: Get item inventory cross characters
-## SavedVariables: ItemLocations, Characters
-## OptionalDeps: LibItems, BM-utils
+## OptionalDeps: BM-utils
+## Dependencies: LibInventory
 
 #@no-lib-strip@
 libs\BM-utils\addon\utils.lua
 libs\BM-utils\addon\CharacterData.lua
-libs\LibInventory\addon\LibInventory.lua
-libs\LibInventory\addon\mail.lua
 #@end-no-lib-strip@
 
 addon\ItemInventory.lua
