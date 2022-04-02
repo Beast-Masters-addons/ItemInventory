@@ -3,23 +3,17 @@
 --- Created by Anders.
 --- DateTime: 15.09.2019 20.41
 ---
-local addonName, _ = ...
-_G['ItemInventoryAddon'] = {}
-local addon = _G['ItemInventoryAddon']
+local addonName, addon = ...
+_G['ItemInventoryAddon'] = addon
 
-addon.utils = _G['BMUtils']
-addon.utils = LibStub("BM-utils-1")
+local minor
+---@type BMUtils
+addon.utils, minor = _G.LibStub('BM-utils-1')
+assert(minor >= 6, ('BMUtils 1.6 or higher is required, found 1.%d'):format(minor))
 
-addon.inventory = _G['LibInventory']
-addon.inventory = LibStub("LibInventory-0")
-
-addon.itemLocations = _G['ItemLocations']
-addon.character_name = addon.utils:GetCharacterString()
-
-addon.Owners = _G['OwnersAddon']
+---@type LibInventory
+addon.inventory = _G.LibStub('LibInventory-0')
 addon.characterInfo = _G['CharacterData']
-
-local mail = _G['LibInventoryMail']
 
 local frame = CreateFrame("Frame"); -- Need a frame to respond to events
 -- Event handler
