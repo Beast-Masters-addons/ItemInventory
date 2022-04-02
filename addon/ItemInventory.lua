@@ -29,46 +29,11 @@ function frame:OnEvent(event, arg1)
         addon.utils:printf("%s loaded", addonName)
         --@end-debug
 
-        frame:SetScript('OnEvent', function(self2, event2, ...)
-            if _G['ItemInventoryEvents'][event2] == nil then
-                error(addon.utils:sprintf('No event handler for %s', event2))
-            end
-            _G['ItemInventoryEvents'][event2](self2, ...)
-        end)
-        addon:init_variables()
-        addon:scanBags()
         local character = addon.characterInfo:current()
         character:save()
-
-        self:registerEvents()
     end
 end
 
-function frame:registerEvents()
-    self:RegisterEvent('MAIL_INBOX_UPDATE')
-    self:RegisterEvent('BAG_UPDATE')
-    self:RegisterEvent('PLAYER_MONEY')
-    self:RegisterEvent('GUILD_ROSTER_UPDATE')
-    self:RegisterEvent('PLAYER_EQUIPMENT_CHANGED')
-    self:RegisterEvent('BANKFRAME_OPENED')
-    self:RegisterEvent('BANKFRAME_CLOSED')
-    self:RegisterEvent('PLAYERBANKSLOTS_CHANGED')
-
-    --if CanUseVoidStorage then
-    --    self:RegisterEvent('VOID_STORAGE_OPEN')
-    --    self:RegisterEvent('VOID_STORAGE_CLOSE')
-    --end
-
-    --if CanGuildBankRepair then
-    --    self:RegisterEvent('GUILDBANKFRAME_OPENED')
-    --    self:RegisterEvent('GUILDBANKFRAME_CLOSED')
-    --    self:RegisterEvent('GUILDBANKBAGSLOTS_CHANGED')
-    --end
-
-    if _G['REAGENTBANK_CONTAINER'] ~= nil then
-        self:RegisterEvent('PLAYERREAGENTBANKSLOTS_CHANGED')
-    end
-end
 frame:SetScript("OnEvent", frame.OnEvent);
 frame:RegisterEvent("ADDON_LOADED"); -- Fired when saved variables are loaded
 

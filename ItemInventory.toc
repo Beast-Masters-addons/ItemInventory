@@ -17,4 +17,3 @@ libs\BM-utils\addon\CharacterData.lua
 #@end-no-lib-strip@
 
 addon\ItemInventory.lua
-addon\events.lua
