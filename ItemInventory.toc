@@ -1,6 +1,6 @@
-## Interface-Retail: 90200
-## Interface-Classic: 11402
-## Interface-BCC: 20504
+## Interface: 90207
+## Interface-Classic: 11403
+## Interface-Wrath: 30400
 ## Title: ItemInventory
 ## Author: datagutten
 ## Version: @project-version@
