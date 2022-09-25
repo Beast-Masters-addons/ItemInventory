@@ -8,6 +8,8 @@
 ## OptionalDeps: BM-utils
 ## Dependencies: LibInventory
 
+## X-Wago-ID: Xb6XOBNp
+
 #@no-lib-strip@
 libs\BM-utils\addon\utils.lua
 libs\BM-utils\addon\CharacterData.lua
