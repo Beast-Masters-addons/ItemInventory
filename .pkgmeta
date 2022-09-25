@@ -1,6 +1,10 @@
 package-as: ItemInventory
 
 externals:
+  libs/LibStub:
+    url: https://repos.wowace.com/wow/libstub/trunk
+    tag: latest
+
   libs/BM-utils:
     url: https://github.com/Beast-Masters-addons/BM-utils.git
     tag: v1.3
@@ -10,6 +14,7 @@ required-dependencies:
   - LibInventory
 
 ignore:
+  - libs/LibStub/tests
   - libs/BM-utils/tests
 
 enable-nolib-creation: yes

@@ -11,6 +11,7 @@
 ## X-Wago-ID: Xb6XOBNp
 
 #@no-lib-strip@
+libs\LibStub\LibStub.lua
 libs\BM-utils\addon\utils.lua
 libs\BM-utils\addon\CharacterData.lua
 #@end-no-lib-strip@
