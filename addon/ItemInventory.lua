@@ -12,8 +12,9 @@ addon.utils, minor = _G.LibStub('BM-utils-1')
 assert(minor >= 6, ('BMUtils 1.6 or higher is required, found 1.%d'):format(minor))
 
 ---@type LibInventory
-addon.inventory = _G.LibStub('LibInventory-0')
+addon.inventory = _G['LibInventory']
 addon.characterInfo = _G['CharacterData']
+local is_classic = _G.WOW_PROJECT_ID ~= _G.WOW_PROJECT_MAINLINE
 
 local frame = _G.CreateFrame("Frame"); -- Need a frame to respond to events
 -- Event handler
@@ -65,7 +66,7 @@ function addon:itemCountTooltip(itemID)
     end
 end
 
-_G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
+local function tooltip_handler(self)
     if addonName ~= "ItemInventory" then
         return
     end
@@ -75,4 +76,14 @@ _G.GameTooltip:HookScript("OnTooltipSetItem", function(self)
     end
     local itemID = addon.utils:ItemIdFromLink(link)
     addon:itemCountTooltip(itemID)
-end)
+end
+
+if is_classic then
+    _G.GameTooltip:HookScript("OnTooltipSetItem", tooltip_handler)
+else
+    _G.TooltipDataProcessor.AddTooltipPostCall(_G.Enum.TooltipDataType.Item, function(self)
+        if self == _G.GameTooltip then
+            tooltip_handler(self)
+        end
+    end)
+end
