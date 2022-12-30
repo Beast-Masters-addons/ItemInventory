@@ -8,6 +8,6 @@ The inventory handling is done by [LibInventory](https://github.com/Beast-Master
 
 ### TODO:
 
-- [ ] Save equipped items
-- [ ] Save items from guild bank
+- [*] Save equipped items
+- [*] Save items from guild bank
 - [ ] Save items from void storage
