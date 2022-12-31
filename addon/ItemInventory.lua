@@ -10,6 +10,7 @@ local minor
 ---@type BMUtils
 addon.utils, minor = _G.LibStub('BM-utils-1')
 assert(minor >= 6, ('BMUtils 1.6 or higher is required, found 1.%d'):format(minor))
+assert(_G['LibInventory'].main, 'LibInventory not loaded')
 
 ---@type LibInventory
 addon.inventory = _G['LibInventory']
