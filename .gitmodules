@@ -1,0 +1,3 @@
+[submodule "tests/LibInventory"]
+	path = tests/LibInventory
+	url = https://github.com/Beast-Masters-addons/LibInventory

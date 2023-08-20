@@ -7,7 +7,7 @@ externals:
 
   libs/BM-utils:
     url: https://github.com/Beast-Masters-addons/BM-utils.git
-    tag: v1.8.1
+    tag: v2.0-alpha2
 
 required-dependencies:
   - BM-utils
