@@ -6,9 +6,8 @@
 local addonName, addon = ...
 _G['ItemInventoryAddon'] = addon
 
-local minor
 ---@type BMUtils
-addon.utils, minor = _G.LibStub('BM-utils-2')
+addon.utils = _G.LibStub('BM-utils-2')
 --assert(minor >= 6, ('BMUtils 1.6 or higher is required, found 1.%d'):format(minor))
 
 ---TODO: LibInventory version check
@@ -40,7 +39,6 @@ function addon:itemCountTooltip(itemID)
         if next(locations) ~= nil then
             local sum = 0
             local location_strings = {}
-            local guildBankString
             local name, realm = self.utils.character.splitCharacterString(character)
             for location, quantity in pairs(locations) do
                 location = inventory:locationName(location)
