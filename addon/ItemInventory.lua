@@ -21,16 +21,6 @@ local characters = lib_inventory:GetModule('LibInventoryCharacter')
 
 local is_classic = _G.WOW_PROJECT_ID ~= _G.WOW_PROJECT_MAINLINE
 
-local frame = _G.CreateFrame("Frame"); -- Need a frame to respond to events
--- Event handler
-
-frame:SetScript("OnEvent", function(_, event, arg1)
-    if event == "ADDON_LOADED" and arg1 == "ItemInventory" then
-        characters:save()
-    end
-end);
-frame:RegisterEvent("ADDON_LOADED"); -- Fired when saved variables are loaded
-
 addon.location_color = 'ffffffff'
 addon.quantity_color = 'ff00ff00'
 
