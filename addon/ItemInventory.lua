@@ -10,10 +10,13 @@ _G['ItemInventoryAddon'] = addon
 addon.utils = _G.LibStub('BM-utils-2')
 --assert(minor >= 6, ('BMUtils 1.6 or higher is required, found 1.%d'):format(minor))
 
----TODO: LibInventory version check
-
 ---@type LibInventoryAce
 local lib_inventory = _G.LibStub("AceAddon-3.0"):GetAddon('LibInventoryAce')
+--Allow development versions
+if not lib_inventory.version:len() == 7 then
+    local version_check = _G['BMUtils-Version'].version_check(lib_inventory.version, 0, 10)
+    assert(version_check, ('LibInventory v0.10 or higher is required, found v%s'):format(lib_inventory.version))
+end
 ---@type LibInventoryLocations
 local inventory = lib_inventory:GetModule('LibInventoryLocations')
 ---@type LibInventoryCharacter
