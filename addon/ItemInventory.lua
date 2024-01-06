@@ -7,7 +7,7 @@ local addonName, addon = ...
 _G['ItemInventoryAddon'] = addon
 
 ---@type BMUtils
-addon.utils = _G.LibStub('BM-utils-2')
+local utils = _G.LibStub('BM-utils-2')
 --assert(minor >= 6, ('BMUtils 1.6 or higher is required, found 1.%d'):format(minor))
 
 ---@type LibInventoryAce
@@ -32,11 +32,11 @@ function addon:itemCountTooltip(itemID)
         if next(locations) ~= nil then
             local sum = 0
             local location_strings = {}
-            local name, realm = self.utils.character.splitCharacterString(character)
+            local name, realm = utils.character.splitCharacterString(character)
             for location, quantity in pairs(locations) do
                 location = inventory:locationName(location)
-                local location_string = self.utils.text.colorize(location .. ': ', self.location_color)
-                local quantity_string = self.utils.text.colorize(quantity, self.quantity_color)
+                local location_string = utils.text.colorize(location .. ': ', self.location_color)
+                local quantity_string = utils.text.colorize(quantity, self.quantity_color)
 
                 sum = sum + quantity
                 table.insert(location_strings, location_string .. quantity_string)
@@ -67,7 +67,7 @@ local function tooltip_handler(self)
     if not link then
         return
     end
-    local itemID = addon.utils.itemIdFromLink(link)
+    local itemID = utils.itemIdFromLink(link)
     addon:itemCountTooltip(itemID)
 end
 
