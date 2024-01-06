@@ -13,7 +13,7 @@ addon.utils = _G.LibStub('BM-utils-2')
 ---@type LibInventoryAce
 local lib_inventory = _G.LibStub("AceAddon-3.0"):GetAddon('LibInventoryAce')
 --Allow development versions
-if not lib_inventory.version:len() == 7 then
+if lib_inventory.version:len() ~= 7 then
     local version_check = _G['BMUtils-Version'].version_check(lib_inventory.version, 0, 10)
     assert(version_check, ('LibInventory v0.10 or higher is required, found v%s'):format(lib_inventory.version))
 end
